@@ -1,0 +1,10 @@
+node_modules/
+data/*
+!data/items.csv
+.*
+!/.gitignore
+package-lock.json
+yarn-error.log
+output/
+output.json
+dist/
