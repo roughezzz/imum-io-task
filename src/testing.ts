@@ -3,8 +3,9 @@ import { warningMessage } from './utils';
 import yargs from 'yargs'
 import { functions } from './sites'
 import { CommonInterface } from './sites/interfaces'
+import { sources } from './sites/sources';
 
-function getSourceFunction(source): CommonInterface {
+function getSourceFunction(source:sources): CommonInterface {
     if (!functions[source]) {
         throw new Error(`No functions for source ${source}`)
     }

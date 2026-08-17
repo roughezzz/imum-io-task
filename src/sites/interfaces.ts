@@ -1,5 +1,6 @@
 import { CheerioAPI } from "cheerio";
 import { IdUrlsType } from "../types/common";
+import { PharmacyItem } from "../types/items/pharmacyItem";
 
 export interface CommonInterface {
     // required properties
@@ -12,17 +13,17 @@ export interface CommonInterface {
 
     // required methods
     getNextPageUrl($: CheerioAPI, url?: string): string | undefined;
-    addItems($: CheerioAPI, idUrls: IdUrlsType, url?: string, adLinkMeta?): void;
+    addItems($: CheerioAPI, idUrls: IdUrlsType, url?: string, adLinkMeta?: any): void;
     /**
      *
      * @param {object} currentItem currently scraped item
      * @param {object} previousItem fetched from database previous item
      */
-    isAdModified(currentItem, previousItem): string;
+    isAdModified(currentItem:PharmacyItem, previousItem:PharmacyItem): string;
     isAdRemoved($: CheerioAPI): boolean;
     testing(autoLaunch?: boolean): void
 }
 
 export interface PharmacyInterface extends CommonInterface {
-    scrapePharmacyItem($: CheerioAPI, url: string, adLinkMeta?): any;
+    scrapePharmacyItem($: CheerioAPI, url: string, adLinkMeta?: any): any;
 }

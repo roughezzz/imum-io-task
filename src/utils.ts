@@ -9,7 +9,7 @@ function getCountryCode(countryCodes: any, url: string) {
   return countryCodes[countryCodeFromUrl];
 }
 
-function removeExtraWhitespace(text) {
+function removeExtraWhitespace(text: string) {
   return text.replace(/\r?\n|\r/g, "").replace(/\s\s+/g, " ");
 }
 
@@ -26,7 +26,7 @@ function hasQueryParams(url: string): boolean {
   return searchParamsKeys.length > 0;
 }
 
-function decodeHtml(encodedStr) {
+function decodeHtml(encodedStr: string) {
   let decodedString = he.decode(encodedStr);
   return decodedString;
 }
@@ -37,7 +37,7 @@ function stringToHash(value: string, useLegacyUnlowercased = false) {
   return uuidv5(useLegacyUnlowercased ? value : lowercased, namespace);
 }
 
-function jsonToFile(json, filename) {
+function jsonToFile(json: any, filename: string) {
   var string = JSON.stringify(json);
   try {
     fs.writeFileSync(filename, string);
@@ -46,7 +46,7 @@ function jsonToFile(json, filename) {
   }
 }
 
-function jsonFromFile(filename) {
+function jsonFromFile(filename: any) {
   try {
     return JSON.parse(fs.readFileSync(filename, "utf-8"));
   } catch (error) {
@@ -59,7 +59,7 @@ function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function warningMessage(message) {
+function warningMessage(message: string) {
   console.log("\x1b[33m%s\x1b[0m", message);
 }
 

@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "debug": "nodemon src/testing.ts --watch false --inspect --exec ts-node --activity testing"
+    "debug": "nodemon src/testing.ts --watch false --inspect --exec ts-node --activity testing --source VT1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.0.0"
+    "@types/node": "^20.0.0",
+    "@types/node-fetch": "^2.6.13",
+    "@types/uuid": "^10.0.0",
+    "@types/yargs": "^17.0.35"
   },
   "dependencies": {
     "axios": "^0.26.0",
